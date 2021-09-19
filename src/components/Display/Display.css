@@ -1,0 +1,14 @@
+.display {
+    grid-row: 1/2;
+    grid-column: 1/5;
+    background-color: #333639;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.display-number {
+    color: white;
+    font-size: 60px;
+    font-weight: 200;
+    padding-right: 33px;
+}

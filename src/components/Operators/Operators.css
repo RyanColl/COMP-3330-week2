@@ -1,0 +1,15 @@
+.operators {
+    grid-row: 2/7;
+    grid-column: 4/5;
+    background-color: #FF9E0B;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+#operator-1, #operator-3, #operator-4, #operator-5 {
+    font-size: 40px;
+    font-weight: 300;
+}
+#operator-2 {
+    font-size: 36px;
+    font-weight: 250;
+}
