@@ -2,7 +2,7 @@ import React from "react";
 import './Conversions.css'
 import { spreadToString } from "../../Services/StringServices";
 const Conversions = ({
-    conversions, value, setValue, putInDecimalMode
+    conversions, value, setValue, putInDecimalMode, setTempValue, putInOperatorMode
 }: any) => {
     const convert = (id: string) => {
         
@@ -19,6 +19,8 @@ const Conversions = ({
         if(id === 'ac') {
             setValue(0)
             putInDecimalMode(false)
+            setTempValue(0)
+            putInOperatorMode(false)
         }
     }
     return(
