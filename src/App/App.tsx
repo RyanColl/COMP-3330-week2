@@ -6,7 +6,6 @@ function App() {
   const width = window.innerWidth;
   const height = window.innerHeight;
   const [value, setValue] = React.useState(0)
-  const [current, setCurrent] = React.useState([0])
   const [inDecimalMode, putInDecimalMode] = useState(false)
   const calcData = {
     conversions: ['AC', '+/-', '%'],
@@ -20,10 +19,8 @@ function App() {
       <Calculator 
       value={value} 
       setValue={setValue} 
-      current={current}
       inDecimalMode={inDecimalMode}
       putInDecimalMode={putInDecimalMode}
-      setCurrent={setCurrent}
       calcData={calcData} 
       />
     </div>

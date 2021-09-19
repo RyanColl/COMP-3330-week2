@@ -1,41 +1,45 @@
 import React from "react";
 import './Numbers.css';
-const Numbers = ({numbers, current, setCurrent, inDecimalMode, putInDecimalMode}: any) => {
+const Numbers = ({value, setValue, numbers, inDecimalMode, putInDecimalMode}: any) => {
     const numPress = (num: number) => {
         if(num === 10) {
             putInDecimalMode(true)
             return
         }
-        let items = current
-        if(current[0] === 0) {
-            items.shift()
-        }
-        setCurrent(items.concat(num))
+        let combined = `${value}${num}`
+        setValue(parseFloat(combined))
     }
     const numPressInDecimal = (num: number) => {
+        //if decimal button is hit immediately return
         if(num === 10) {
             putInDecimalMode(true)
             return
         }
-        let items = current
-        let item = items.pop()
-        if(item) {
-            let trunc = Math.trunc(item)
-            console.log(`This is our trunc: ${trunc}`)
-            let decimals = num - trunc;
-            console.log(`These are our decimals`)
-            let newDec = decimals/10 + num/10
-            console.log(`This is our new dec`)
-            console.log(`This is what we are trying to set value ${items.concat(trunc + newDec)}`)
-            // setCurrent(items.concat(trunc + newDec))
+        // make value a string
+        let stringValue = `${value}`
+        let index = stringValue.search(/[.]/g)
+
+        // if there is no decimal in the string
+        if(index === -1) {
+            setValue(value + num/10)
         }
-        
+        // if there is a decimal set the value by concatting the strings and parsing it
+        else {
+            setValue(parseFloat(`${value}${num}`))
+        }
     }
     return(
         <div className='numbers'>
             {numbers.map((num: string, i: number) => {
                 let number = num !== '.' ? parseFloat(num) : 10
-                return <button onClick={() => {!inDecimalMode ? numPress(number) : numPressInDecimal(number)}} key={i} id={(num === '.') ? `period` : `num-${num}`} className='button number'>{num}</button>
+                return <button 
+                        onClick={() => {((`${value}`).length <= 8) 
+                                        && (!inDecimalMode 
+                                            ? numPress(number) 
+                                            : numPressInDecimal(number))}} key={i} id={(num === '.') 
+                                                                                        ? `period` 
+                                                                                        : `num-${num}`} 
+                        className='button number'>{num}</button>
             })}
         </div>
     )

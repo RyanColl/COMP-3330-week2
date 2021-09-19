@@ -10,7 +10,7 @@ import './Calculator.css';
 
 const Calculator = ({
     calcData: {conversions, numbers, operators}, 
-    value, setValue, current, setCurrent, inDecimalMode, putInDecimalMode
+    value, setValue, inDecimalMode, putInDecimalMode
 }: any) => {
     const calculate = () => {
         
@@ -19,19 +19,17 @@ const Calculator = ({
         <div className='calculator'>
             {/* @ts-ignore */}
             <Display 
-            current={current} 
             value={value} 
             />
             <Conversions 
-            current={current}
-            setCurrent={setCurrent}
             value={value}
             setValue={setValue}
             conversions={conversions} 
+            putInDecimalMode={putInDecimalMode}
             />
             <Numbers 
-            current={current}
-            setCurrent={setCurrent}
+            value={value}
+            setValue={setValue}
             numbers={numbers} 
             inDecimalMode={inDecimalMode}
             putInDecimalMode={putInDecimalMode}
