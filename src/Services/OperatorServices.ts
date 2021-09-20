@@ -48,37 +48,6 @@ class OperatorServices {
             this.symbol = symbol
             return this.value
         }
-       
-        // if(this.symbol === '') {
-        //     this.symbol = symbol;
-        //     return this.value;
-        // }
-        // // if the button pressed is the equals button, check if a symbol has been pressed. if it has, send that function
-        // if(symbol === '=') {
-        //     if(this.symbol === '-') return this.minus()
-        //     if(this.symbol === 'x') return this.multiply()
-        //     if(this.symbol === '+') return this.plus()
-        //     if(this.symbol === '÷') return this.divide()
-        // }
-        // // if the button pressed is not equals, and the symbol is set, execute the function, but change the symbol
-        // if(this.symbol === '-') {
-        //     this.symbol = symbol;
-        //     return this.minus()
-        // }
-        // if(this.symbol === 'x') {
-        //     this.symbol = symbol;
-        //     return this.multiply()
-        // }
-        // if(this.symbol === '+') {
-        //     this.symbol = symbol;
-        //     return this.plus()
-        // }
-        // if(this.symbol === '÷') {
-        //     this.symbol = symbol;
-        //     return this.divide()
-        // }
-        // console.log('returning this value')
-        // return this.value;
     }
     reset() {
         this.value = 0;
