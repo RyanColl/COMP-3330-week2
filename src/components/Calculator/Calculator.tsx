@@ -48,6 +48,7 @@ const Calculator = ({
             setTempValue={setTempValue}
             inOperatorMode={inOperatorMode}
             putInOperatorMode={putInOperatorMode}
+            putInDecimalMode={putInDecimalMode}
             />
 
         </div>

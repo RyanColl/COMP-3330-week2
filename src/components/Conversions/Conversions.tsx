@@ -1,6 +1,6 @@
 import React from "react";
 import './Conversions.css'
-import { spreadToString } from "../../Services/StringServices";
+import os from "../../Services/OperatorServices";
 const Conversions = ({
     conversions, value, setValue, putInDecimalMode, setTempValue, putInOperatorMode
 }: any) => {
@@ -21,6 +21,7 @@ const Conversions = ({
             putInDecimalMode(false)
             setTempValue(0)
             putInOperatorMode(false)
+            os.reset();
         }
     }
     return(
